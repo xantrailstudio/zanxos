@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="login-signup.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <title>Create Account at zanX | Signup</title>
+  <meta name="description" content="Create your account on zanX.">
+  <meta name="author" content="AbdulAziz">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <form onsubmit="event.preventDefault(); signup();">
+      <h2>Create Account</h2>
+
+      <div class="input-field">
+        <input type="text" id="name" required>
+        <label>Full Name</label>
+      </div>
+
+      <div class="input-field">
+        <input type="email" id="email" required>
+        <label>Email</label>
+      </div>
+
+      <div class="input-field">
+        <input type="password" id="password" required>
+        <label>Password</label>
+      </div>
+
+      <button type="submit">Sign Up</button>
+
+      <div class="divider">
+        <span>or</span>
+      </div>
+
+      <button type="button" class="google-btn" onclick="googleAuth()">
+        <i class="fa-brands fa-google"></i> Sign up with Google
+      </button>
+
+      <div class="register">
+        <p>Already have an account?
+          <a href="login.html">Login</a>
+        </p>
+      </div>
+
+      <p id="msg" class="error"></p>
+    </form>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+
+</html>

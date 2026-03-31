@@ -1,0 +1,11 @@
+{
+  "name": "zanx-os",
+  "version": "8.2.0",
+  "description": "zanX Web OS",
+  "author": "AbdulAziz",
+  "type": "module",
+  "scripts": {},
+  "dependencies": {
+    "firebase": "^10.7.0"
+  }
+}

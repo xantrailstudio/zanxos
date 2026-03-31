@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>zanX | The Future of Web OS</title>
+  <meta name="description"
+    content="Experience zanX - A powerful, secure, and beautiful web-based operating system in your browser. Version 8.2">
+  <meta name="keywords" content="web os, online os, browser os, zanx, cloud computer, virtual desktop, zanx os 8.2">
+  <meta name="author" content="AbdulAziz">
+  <meta name="theme-color" content="#007acc">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="zanX OS">
+  <meta name="application-name" content="zanX OS">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="manifest" href="manifest.json">
+  <link rel="canonical" href="https://xancore.web.app/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="zanX OS">
+  <meta property="og:title" content="zanX | The Future of Web OS">
+  <meta property="og:description"
+    content="Experience zanX - A powerful, secure, and beautiful web-based operating system in your browser.">
+  <meta property="og:image" content="Bgimg/img.jpg">
+  <meta property="og:url" content="https://xancore.web.app/">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="zanX | The Future of Web OS">
+  <meta property="twitter:description"
+    content="Experience zanX - A powerful, secure, and beautiful web-based operating system in your browser.">
+  <meta property="twitter:image" content="Bgimg/img.jpg">
+  <meta property="twitter:site" content="@AbdulAziz">
+  <meta property="twitter:creator" content="@AbdulAziz">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #007acc;
+      --bg: #0b0b0f;
+      --glass: rgba(255, 255, 255, 0.03);
+      --glass-border: rgba(255, 255, 255, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: white;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* Ambient Background Background */
+    .bg-glow {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(0, 122, 204, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(0, 122, 204, 0.08) 0%, transparent 40%);
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 5%;
+      z-index: 100;
+      position: sticky;
+      top: 0;
+      background: rgba(11, 11, 15, 0.7);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #fff, #007acc);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: #999;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    /* Sections */
+    section {
+      padding: 100px 5%;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #fff 0%, #007acc 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -3px;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 3vw, 1.25rem);
+      color: #888;
+      max-width: 650px;
+      margin-bottom: 3rem;
+      line-height: 1.6;
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 14px 36px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-primary {
+      background: white;
+      color: black;
+      border: 1px solid white;
+    }
+
+    .btn-primary:hover {
+      background: #eee;
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-secondary {
+      background: var(--glass);
+      color: white;
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-4px);
+    }
+
+    /* Features Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .feature-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      padding: 2.5rem;
+      border-radius: 24px;
+      transition: all 0.3s;
+    }
+
+    .feature-card:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--primary);
+      transform: translateY(-10px);
+    }
+
+    .feature-card i {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .feature-card p {
+      color: #777;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      background: #08080a;
+      padding: 80px 5% 40px;
+      border-top: 1px solid var(--glass-border);
+      margin-top: auto;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 3rem;
+      margin-bottom: 60px;
+    }
+
+    .footer-section h4 {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      color: white;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-section ul li a {
+      color: #666;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-section ul li a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      color: #444;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="bg-glow"></div>
+
+  <nav>
+    <div class="logo">zanX</div>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="documentation.html">Docs</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html"
+        style="color: white; background: var(--primary); padding: 8px 16px; border-radius: 8px;">Sign Up</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Your Cloud Computer<br>Reimagined.</h1>
+    <p>Experience the power of a full operating system directly in your browser. Fast, secure, and accessible from
+      anywhere on any device.</p>
+
+    <div class="cta-group">
+      <a href="os.html" class="btn btn-primary">Launch System <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="documentation.html" class="btn btn-secondary">Read Docs</a>
+    </div>
+  </section>
+
+  <section id="features">
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Why zanX OS?</h2>
+      <p style="color: #666; margin: 0 auto; max-width: 600px;">Built with modern technologies to provide the most fluid
+        desktop experience in the browser.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <i class="fa-solid fa-bolt"></i>
+        <h3>Lightning Fast</h3>
+        <p>Optimized for 60FPS performance and instant application switching using advanced window management.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h3>Secure by Design</h3>
+        <p>Your data is protected with Firebase Authentication and persistent session encryption.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fa-solid fa-cloud"></i>
+        <h3>Cloud Integration</h3>
+        <p>Everything you save is instantly synced to the cloud. Access your workspace from any computer.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="logo" style="margin-bottom: 1.5rem;">zanX</div>
+        <p style="color: #666; font-size: 0.9rem; line-height: 1.6;">The next generation of web-based computing.
+          Versatile, portable, and powerful.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="os.html">Launch OS</a></li>
+          <li><a href="documentation.html">Documentation</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://linkedin.com/in/abdulaziz-memon" target="_blank">LinkedIn</a></li>
+          <li><a href="https://github.com/AbdulAziz-Memon" target="_blank">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 zanX OS v8.2 by Xantrail Studio. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+
+</html>
+
+
+</body>
+
+</html>

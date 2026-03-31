@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://xancore.web.app/sitemap.xml

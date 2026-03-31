@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>zanX OS 8.2</title>
+  <meta name="description"
+    content="zanX OS 8.2 - A powerful, web-based operating system. Experience a full desktop environment in your browser.">
+  <meta name="keywords" content="web os, online os, browser os, zanx, cloud computer, virtual desktop">
+  <meta name="author" content="AbdulAziz">
+  <meta name="theme-color" content="#007acc">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="zanX OS">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="zanX OS">
+  <meta property="og:title" content="zanX OS 8.2">
+  <meta property="og:description" content="Experience zanX OS 8.2 in your browser. Modern web-based computing.">
+  <meta property="og:image" content="Bgimg/img.jpg">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="zanX OS 8.2">
+  <meta property="twitter:description" content="Experience zanX OS 8.2 in your browser.">
+  <meta property="twitter:image" content="Bgimg/img.jpg">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="os.css">
+</head>
+
+<body>
+
+  <img id="wallpaper" src="Bgimg/img.jpg" alt="Wallpaper">
+
+  <button id="logoutBtn" class="logout-btn">
+    <i class="fa-solid fa-right-from-bracket"></i> Logout
+  </button>
+
+  <div id="centerTitle">zanX OS 8.2</div>
+
+  <div id="desktop"></div>
+
+  <div id="dock">
+    <div class="dock-app" data-app="createFile">
+      <i class="fa-solid fa-folder-open"></i>
+      <div class="dot"></div>
+    </div>
+    <div class="dock-app" data-app="xiaapps">
+      <i class="fa-solid fa-store"></i>
+      <div class="dot"></div>
+    </div>
+    <div class="dock-app" data-app="browser">
+      <i class="fa-solid fa-globe"></i>
+      <div class="dot"></div>
+    </div>
+    <div class="dock-separator"></div>
+    <div id="dock-clock">
+      <div id="dock-time">00:00</div>
+      <div id="dock-date">MON, JAN 01</div>
+    </div>
+  </div>
+
+  <div id="preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">zanX</div>
+      <div class="preloader-spinner"></div>
+      <div class="preloader-status">Starting System...</div>
+    </div>
+  </div>
+
+  <div id="lock-screen" class="lock-screen-overlay">
+    <div class="lock-clock-container">
+      <div id="lock-time">00:00</div>
+      <div id="lock-date">Monday, January 1</div>
+    </div>
+
+    <div class="lock-user-container">
+      <div class="lock-avatar">
+        <i class="fa-solid fa-user"></i>
+      </div>
+      <div id="lock-username">User</div>
+      <div id="lock-password-container" class="password-input-wrapper" style="display: none;">
+        <input type="password" id="lock-password-input" placeholder="Enter Password">
+        <button id="unlock-btn" class="unlock-btn">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+      <button id="unlock-btn-no-pass" class="unlock-btn" style="width: auto; padding: 0 20px; border-radius: 50px;">
+        Unlock
+      </button>
+      <div id="lock-error" class="lock-error-msg">Wrong Password</div>
+    </div>
+  </div>
+
+  <script type="module" src="os.js"></script>
+</body>
+
+</html>
